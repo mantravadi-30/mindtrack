@@ -2,9 +2,6 @@
 
 A full-stack web app for early mental health risk detection using longitudinal text analysis, NLP, and AI-powered insights.
 
-**Live demo:** _add your deployed link here once live_
-**Backend API:** _add your Render URL here once deployed_
-
 ---
 
 ## 🗂️ Project Structure
@@ -51,7 +48,7 @@ MindTrack uses [Groq](https://console.groq.com) to run Llama 3.3 for chat, journ
 
 ### 2 — Backend
 
-```bash
+```
 cd backend
 pip install -r requirements.txt
 cp .env.example .env
@@ -66,7 +63,7 @@ You should see: `Uvicorn running on http://127.0.0.1:8000`
 
 Open a **new terminal**:
 
-```bash
+```
 cd frontend
 npm install
 npm run dev
@@ -80,44 +77,17 @@ Go to the URL Vite prints in your browser. 🎉
 
 ---
 
-## 🚀 Deploying it for free
-
-### Backend → Render
-
-1. Push this repo to GitHub (see below).
-2. On [Render](https://render.com), create a **New Web Service** and connect your GitHub repo.
-3. Set:
-   - **Root Directory:** `backend`
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-4. Add environment variables in the Render dashboard: `GROQ_API_KEY`, `SECRET_KEY`, and `ALLOWED_ORIGINS` (set this to your Vercel URL once you have it, e.g. `https://mindtrack.vercel.app`).
-5. Deploy. Note the URL Render gives you (e.g. `https://mindtrack-api.onrender.com`).
-
-> ⚠️ Render's free tier uses ephemeral disk storage, so the SQLite database resets on redeploy/restart. That's fine for a demo/resume project — just don't rely on it for real user data.
-
-### Frontend → Vercel
-
-1. On [Vercel](https://vercel.com), import the same GitHub repo.
-2. Set:
-   - **Root Directory:** `frontend`
-   - Framework preset: **Vite** (auto-detected)
-3. Add an environment variable: `VITE_API_URL` = your Render backend URL from above.
-4. Deploy. Vercel gives you a live URL — that's the one to put on your resume.
-5. Go back to Render and set `ALLOWED_ORIGINS` to this exact Vercel URL, then redeploy the backend so CORS allows it.
-
----
-
 ## ✨ Features
 
-| Feature | Description |
-|---|---|
-| 🔐 JWT Authentication | Secure register/login with bcrypt password hashing |
-| 📓 AI Journal | Write entries, get mood + risk analysis + SHAP-style explainability |
-| 💬 AI Chatbot | AI-powered mental wellness companion, backed by Llama 3.3 via Groq |
-| 😊 Mood Check-in | Flashcard-style daily mood logging |
-| 🛡️ Risk Report | 30-day heatmap + longitudinal risk trend analysis |
-| 📂 CSV Upload | Upload social media data for bulk analysis |
-| ✨ Weekly Summary | AI-generated weekly mental health summary |
+| Feature              | Description                                                         |
+| -------------------- | ------------------------------------------------------------------- |
+| 🔐 JWT Authentication | Secure register/login with bcrypt password hashing                  |
+| 📓 AI Journal         | Write entries, get mood + risk analysis + SHAP-style explainability |
+| 💬 AI Chatbot         | AI-powered mental wellness companion, backed by Llama 3.3 via Groq  |
+| 😊 Mood Check-in      | Flashcard-style daily mood logging                                  |
+| 🛡️ Risk Report       | 30-day heatmap + longitudinal risk trend analysis                   |
+| 📂 CSV Upload         | Upload social media data for bulk analysis                          |
+| ✨ Weekly Summary     | AI-generated weekly mental health summary                           |
 
 ---
 
@@ -139,5 +109,4 @@ Go to the URL Vite prints in your browser. 🎉
 
 ## ⚠️ Important Disclaimer
 
-This app is not a substitute for professional mental health support.
-**Crisis helpline: iCall — 9152987821**
+This app is not a substitute for professional mental health support. **Crisis helpline: iCall — 9152987821**
